@@ -10,10 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_151413) do
+ActiveRecord::Schema.define(version: 2020_02_10_171931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.bigint "user_id", null: false
+    t.bigint "bus_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bus_id"], name: "index_bookings_on_bus_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "buses", force: :cascade do |t|
+    t.string "name"
+    t.integer "capacity"
+    t.text "description"
+    t.integer "price"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_buses_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.integer "note"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "bus_id", null: false
+    t.index ["bus_id"], name: "index_reviews_on_bus_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +62,9 @@ ActiveRecord::Schema.define(version: 2020_02_10_151413) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "buses"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "buses", "users"
+  add_foreign_key "reviews", "buses"
+  add_foreign_key "reviews", "users"
 end
