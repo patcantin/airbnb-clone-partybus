@@ -22,6 +22,8 @@ class BusController < ApplicationController
   end
 
   def destroy
+    @bus.destroy
+    redirect_to buses_path
   end
 
   private
