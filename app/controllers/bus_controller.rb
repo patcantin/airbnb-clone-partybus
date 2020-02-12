@@ -9,6 +9,7 @@ class BusController < ApplicationController
   end
 
   def new
+    @bus = Bus.new
   end
 
   def create
