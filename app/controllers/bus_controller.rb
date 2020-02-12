@@ -2,6 +2,7 @@ class BusController < ApplicationController
   before_action :set_bus, only: [:show, :destroy]
 
   def index
+    @buses = Bus.all
   end
 
   def show
