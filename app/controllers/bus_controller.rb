@@ -13,6 +13,12 @@ class BusController < ApplicationController
   end
 
   def create
+    @bus = Bus.new(bus_params)
+    if @bus.save
+      redirect_to buses_path
+    else
+      render :new
+    end
   end
 
   def destroy
