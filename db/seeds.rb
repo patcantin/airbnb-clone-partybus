@@ -10,11 +10,11 @@ puts "cleaning database"
 
 puts "creating user"
 
-User.create!(email: "1233333@localhost", password: "erhgerlhge33", encrypted_password: "$2a$10$5eoHh6M2q4GjGkHClO.NqebWWhS94D8rNj5Ot6CB2qrbn7IrTfkSa", reset_password_token: nil, reset_password_sent_at: nil)
+User.create!(email: "4473@localhost", password: "erhgerlhge33", encrypted_password: "$2a$10$5eoHh6M2q4GjGkHClO.NqebWWhS94D8rNj5Ot6CB2qrbn7IrTfkSa", reset_password_token: nil, reset_password_sent_at: nil)
 
 puts "creating bus"
 
-Bus.create!(name: "gin", capacity: 15, description: "harghaehgl", price: 250, user_id: 1)
+Bus.create!(name: "gin", capacity: 15, description: "harghaehgl", price: 250, user_id: 1, id: 3)
 
 
 # Creating ingredients by parsing API
