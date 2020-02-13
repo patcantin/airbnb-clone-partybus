@@ -1,18 +1,1 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<div class="banner-content">
-    <h1>The Wagonner's users</h1>
-    <p>Awesome party bus for developers nightlife</p>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <% @users.each do |user| %>
-      <div class="">
-        <h2><%= user.name %></h2>
-        <%= link_to "", user_path(user) %>
-      </div>
-    <% end %>
-  </div>
-</div>
