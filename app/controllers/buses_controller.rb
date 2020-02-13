@@ -1,4 +1,4 @@
-class BusController < ApplicationController
+class BusesController < ApplicationController
   before_action :set_bus, only: [:show, :destroy]
 
   def index
