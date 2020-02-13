@@ -1,0 +1,19 @@
+<h1>ALAl</h1>
+
+<% @buses.each do |bus| %>
+<%= link_to bus do  %>
+    <div class="card">
+      <h3><%= bus.name %></h3>
+          <%= bus.price %>
+          <%= bus.description %>
+          <%= bus.user_id %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= current_user.email %>
+
+
+
+
+
