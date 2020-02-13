@@ -1,0 +1,16 @@
+  <div class="banner-content">
+    <h1>The Wagonner's users</h1>
+    <p>Awesome party bus for developers nightlife</p>
+    <%= link_to "Add a user", new_user_path, class: "btn btn-primary btn-lg" %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="">
+        <h2><%= user.name %></h2>
+        <%= link_to "", user_path(user) %>
+      </div>
+    <% end %>
+  </div>
+</div>
