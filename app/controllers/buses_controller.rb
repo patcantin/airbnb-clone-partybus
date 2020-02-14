@@ -15,8 +15,9 @@ class BusesController < ApplicationController
 
   def create
     @bus = Bus.new(bus_params)
-    if @bus.save
-      redirect_to buses_path
+    @bus.user = current_user
+    if @bus.save!
+      redirect_to dashboard_path
     else
       render :new
     end
