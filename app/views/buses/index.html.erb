@@ -1,15 +1,15 @@
 <h1>Wagonner's Party</h1>
 
-
-<% @buses.each do |bus| %>
-<%= link_to bus do  %>
-    <div class="card">
-      <h3><%= bus.name %></h3>
-          <%= bus.price %>
-          <%= bus.description %>
-          <%= bus.user_id %>
-          <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-primary btn-sm" %>
-
-    </div>
+<div class="show_all">
+  <% @buses.each do |bus| %>
+    <%= link_to bus do  %>
+        <div class="card">
+          <h3><%= bus.name %></h3>
+              <%= bus.price %>
+              <%= bus.description %>
+              <%= bus.user_id %>
+              <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-primary btn-sm" %>
+        </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
