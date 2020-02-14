@@ -3,5 +3,6 @@
       <h1><%= @bus.name  %></h1>
       <%= @bus.price %>
       <%= @bus.description %>
+      <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "btn btn-primary btn-sm" %>
     </div>
   </div>
