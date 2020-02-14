@@ -14,6 +14,9 @@
 <div class="show_all">
   <% @buses.each do |b| %>
     <div class="card">
+      <% b.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
       <h3>Name: <%= b.name %></h3>
       <h3>Capacity: <%= b.capacity %></h3>
       <h3>Description: <%= b.description %></h3>
