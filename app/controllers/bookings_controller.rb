@@ -3,12 +3,16 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @bus = Bus.find(params[:bus_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.save
-    render :new
+    @bus = Bus.find(params[:bus_id])
+    @booking.bus = @bus
+    @booking.user = current_user
+    @booking.save!
+    redirect_to dashboard_path
   end
 
   private
