@@ -1,4 +1,5 @@
 class BusesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_bus, only: [:show, :destroy]
 
   def index
