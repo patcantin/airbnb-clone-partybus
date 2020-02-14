@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
+//--------index page cards----------//
+.show_all{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  font-family: 'Righteous', cursive;
+}
+
+
+.card {
+  margin: 20px;
+  position: relative;
+  text-align: center;
+  border: 2px solid purple;
+  border-radius: 5px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+
+
+
+
+
+

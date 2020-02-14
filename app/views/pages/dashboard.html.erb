@@ -1,0 +1,11 @@
+<h1>Dashboard</h1>
+<h2>Reservations for : <%= current_user.email %></h2>
+
+<div class="show_all">
+  <% @bookings.each do |b| %>
+    <div class="card">
+      <h3>From: <%= b.start_date %></h3>
+      <h3>To: <%= b.end_date %></h3>
+    </div>
+  <% end %>
+</div>
