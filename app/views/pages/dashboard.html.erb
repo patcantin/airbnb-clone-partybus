@@ -4,7 +4,7 @@
 <div class="show_all">
   <% @bookings.each do |b| %>
     <div class="card">
-      <h3>From: <%= b.start_date.strftime("%B %d, %Y") %> %></h3>
+      <h3>From: <%= b.start_date.strftime("%B %d, %Y") %></h3>
       <h3>To: <%= b.end_date.strftime("%B %d, %Y") %></h3>
     </div>
   <% end %>
