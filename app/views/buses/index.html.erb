@@ -1,25 +1,28 @@
-<h1>Wagonner's Party</h1>
-
-<div class="show_all">
-  <% @buses.each do |bus| %>
-    <%= link_to bus do  %>
-        <div class="card-trip">
-           <% if bus.photo.attached? %>
-             <%= cl_image_tag bus.photo.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-          <div class="card-trip-infos">
-            <div>
-              <h3><%= bus.name %></h3>
-              <p><%= bus.description %></p>
-              <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-primary btn-sm" %>
-            </div>
-            <h2 class="card-trip-pricing"><%= bus.price %>$ /nigth</h2>
-            </div>
-            </div>
+<!-- Carroussel Banner -->
+<%= render'shared/banner' %>
+<div class="container">
+  <div class="show_all">
+    <% @buses.each do |bus| %>
+      <%= link_to bus do  %>
+          <div class="card-trip">
+             <% if bus.photo.attached? %>
+               <%= cl_image_tag bus.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h3><%= bus.name %></h3>
+                <p><%= bus.description %></p>
+                <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-primary btn-sm" %>
+              </div>
+              <h2 class="card-trip-pricing"><%= bus.price %>$ /nigth</h2>
+              </div>
+              </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+
+
+
+    <p class="total"><%= @buses.count %> buses listed</p>
+
 </div>
-
-
-
-  <p class="total"><%= @buses.count %> buses listed</p>
