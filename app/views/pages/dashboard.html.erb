@@ -4,6 +4,7 @@
 <div class="show_all">
   <% @bookings.each do |b| %>
     <div class="card">
+      <%= cl_image_tag b.bus.photo.key, height: 300, width: 400, crop: :fill %>
       <p>From: <%= b.start_date.strftime("%B %d, %Y") %></p>
       <p>To: <%= b.end_date.strftime("%B %d, %Y") %></p>
       <% diff = (b.end_date - b.start_date) %>
