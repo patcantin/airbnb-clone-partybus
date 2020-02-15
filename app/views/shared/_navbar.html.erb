@@ -14,11 +14,14 @@
         <li class="nav-item">
           <%= link_to "Dashboard", dashboard_path, class: "nav-link" %></p>
         </li>
+         <li class="nav-item">
+          <%= link_to "Add Bus", new_bus_path, class: "nav-link" %></p>
+        </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></p>
         </li>
         <li class="nav-item">
-          <p class="nav-link"><%= current_user.name %></p>
+          <p class="nav-email"><%= current_user.email %></p>
         </li>
         <li class="nav-item">
           <%= image_tag "avatar.png", class: "avatar" %>
