@@ -13,13 +13,14 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  padding: 5px;
+  width: 310px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
 
 img {
+  margin: 5px;
   height: 200px;
-  width: 100%;
+  width: 300px;
   object-fit: cover;
 }
 
@@ -52,8 +53,6 @@ p {
 }
   h3 {
 
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   }
   &:hover {
     box-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -62,42 +61,7 @@ p {
 }
 
 
-.card {
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  position: relative;
-  text-align: center;
-  border: 2px solid purple;
-  border-radius: 5px;
-  opacity: 0.8;
-  transition: 0.3s;
 
-
-  img {
-    width: 200px;
-    height: 200px;
-  }
-
-  h3 {
-    position: absolute;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    text-transform: capitalize;
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    margin: 0;
-    position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  }
-  &:hover {
-    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
-    opacity: 1;
-  }
-}
 
 //---------show page card--------//
 .card-product {

@@ -1,3 +1,4 @@
+ <div class="container">
   <h1 class="top_h1">Book this bus</h1>
   <hr>
   <table class="table table-dark">
@@ -24,8 +25,10 @@
   </tbody>
 </table>
 
-  <%= simple_form_for [@bus, @booking] do |f| %>
-    <%= f.input :start_date, as: :date, html5: true %>
-    <%= f.input :end_date, as: :date, html5: true %>
-    <%= f.submit "Confirm" %>
-  <% end %>
+
+    <%= simple_form_for [@bus, @booking] do |f| %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true %>
+      <%= f.submit "Confirm" %>
+    <% end %>
+</div>
