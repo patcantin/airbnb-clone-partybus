@@ -1,12 +1,13 @@
-  <h1 class="top_h1">Add a new bus</h1>
-  <hr>
+  <div class="container">
+    <h1 class="top_h1">Add a new bus</h1>
+    <hr>
 
-  <%= simple_form_for @bus do |f| %>
-    <%= f.input :name %>
-    <%= f.input :capacity %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Create", class: "btn btn-primary" %>
-  <% end %>
-
+    <%= simple_form_for @bus do |f| %>
+      <%= f.input :name %>
+      <%= f.input :capacity %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Create", class: "btn btn-primary" %>
+    <% end %>
+  </div>
