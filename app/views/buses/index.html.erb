@@ -1,6 +1,6 @@
-<h1>Wagonner's Party</h1>
-
-
+<!-- Carroussel Banner -->
+<%= render'shared/banner' %>
+<!-- card bus -->
 <% @buses.each do |bus| %>
 <%= link_to bus do  %>
     <div class="card">
@@ -9,7 +9,6 @@
           <%= bus.description %>
           <%= bus.user_id %>
           <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-primary btn-sm" %>
-
     </div>
   <% end %>
 <% end %>
