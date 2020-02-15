@@ -12,7 +12,7 @@ puts "creating user"
 
 User.destroy_all
 
-user = User.create!(email: "4473@localhost", password: "erhgerlhge33", encrypted_password: "$2a$10$5eoHh6M2q4GjGkHClO.NqebWWhS94D8rNj5Ot6CB2qrbn7IrTfkSa", reset_password_token: nil, reset_password_sent_at: nil)
+user = User.create!(name: "user", email: "user@gmail.com", password: "123456", reset_password_token: nil, reset_password_sent_at: nil)
 
 puts "creating bus"
 

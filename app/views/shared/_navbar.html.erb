@@ -18,7 +18,7 @@
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></p>
         </li>
         <li class="nav-item">
-          <p class="nav-link"><%= current_user.email %></p>
+          <p class="nav-link"><%= current_user.name %></p>
         </li>
         <li class="nav-item">
           <%= image_tag "avatar.png", class: "avatar" %>
