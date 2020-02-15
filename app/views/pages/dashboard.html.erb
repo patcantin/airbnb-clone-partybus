@@ -1,22 +1,17 @@
 <h1>Dashboard(<%= current_user.email %>)</h1>
 <h2>My reservations: </h2>
 
-
-  <div class="show_all">
-    <% @bookings.each do |b| %>
-      <div class="card-trip">
-        <div class="card-trip-infos">
-          <div>
-            <p>From: <%= b.start_date.strftime("%B %d, %Y") %></p>
-            <p>To: <%= b.end_date.strftime("%B %d, %Y") %></p>
-            <p><% diff = (b.end_date - b.start_date) %></p>
-            <p><%= (diff / 1.day).round %> Days</p>
-          </div>
-          </div>
-        </div>
-      <% end %>
-  </div>
-
+<div class="show_all">
+  <% @bookings.each do |b| %>
+    <div class="card">
+      <%= cl_image_tag b.bus.photo.key, height: 300, width: 400, crop: :fill %>
+      <p>From: <%= b.start_date.strftime("%B %d, %Y") %></p>
+      <p>To: <%= b.end_date.strftime("%B %d, %Y") %></p>
+      <% diff = (b.end_date - b.start_date) %>
+      <h3><%= (diff / 1.day).round %> Days</h3>
+    </div>
+  <% end %>
+</div>
 
   <h2>My buses:</h2>
   <div class="show_all">
@@ -35,4 +30,3 @@
             </div>
     <% end %>
 </div
-
