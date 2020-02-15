@@ -1,14 +1,16 @@
 <!-- Carroussel Banner -->
 <%= render'shared/banner' %>
-<!-- card bus -->
-<% @buses.each do |bus| %>
-<%= link_to bus do  %>
-    <div class="card">
-      <h3><%= bus.name %></h3>
-          <%= bus.price %>
-          <%= bus.description %>
-          <%= bus.user_id %>
-          <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-primary btn-sm" %>
-    </div>
+<div class="show_all">
+  <% @buses.each do |bus| %>
+    <%= link_to bus do  %>
+        <div class="card">
+          <h3><%= bus.name %></h3>
+              <%= bus.price %>
+              <%= bus.description %>
+              <%= bus.user_id %>
+              <%= cl_image_tag bus.photo.key, height: 300, width: 400, crop: :fill %>
+              <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-primary btn-sm" %>
+        </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

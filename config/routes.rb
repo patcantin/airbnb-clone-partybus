@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resources :buses, only: [:index, :show, :new, :create, :destroy] do
     resources :bookings, only: %i(new create)
   end
+  get '/pages/dashboard', to: 'pages#dashboard', as: 'dashboard'
 end
+
+
 
