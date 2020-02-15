@@ -3,14 +3,23 @@
 <div class="show_all">
   <% @buses.each do |bus| %>
     <%= link_to bus do  %>
-        <div class="card">
-          <h3><%= bus.name %></h3>
-              <%= bus.price %>
-              <%= bus.description %>
-              <%= bus.user_id %>
-              <%= cl_image_tag bus.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-trip">
+           <% if bus.photo.attached? %>
+             <%= cl_image_tag bus.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h3><%= bus.name %></h3>
+              <p><%= bus.description %></p>
               <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-primary btn-sm" %>
-        </div>
+            </div>
+            <h2 class="card-trip-pricing"><%= bus.price %>$ /nigth</h2>
+            </div>
+            </div>
     <% end %>
   <% end %>
 </div>
+
+
+
+  <p class="total"><%= @buses.count %> buses listed</p>
