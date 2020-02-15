@@ -1,13 +1,15 @@
 <div class="container">
-    <table class="table table-dark">
+    <table class="table">
       <thead>
         <tr>
-          <th scope="col"><%= @bus.name.capitalize %></th>
-          <th scope="col">Description</th>
+          <th scope="col"><h2 style="text-align: left;"><%= @bus.name.capitalize %></h2></th>
+          <th scope="col"><h3>Description</h3></th>
         </tr>
       </thead>
       <tbody>
         <tr>
+
+          <td class="img_broder"><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
           <% if @bus.photo.attached? %>
           <td class="img_broder"><%= cl_image_tag @bus.photo.key, height: 200, width: 300, crop: :fill %></td>
           <% end %>
@@ -15,10 +17,9 @@
             <p><%= @bus.description %></p>
             <p>Capacity: <%= @bus.capacity %> pers.</p>
             <p><%= @bus.price %>$ / per night</p>
-            <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "btn btn-primary btn-sm" %>
+            <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "btn btn-danger btn-sm" %>
           </td>
         </tr>
       </tbody>
     </table>
 </div>
-

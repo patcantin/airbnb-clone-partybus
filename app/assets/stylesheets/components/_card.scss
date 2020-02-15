@@ -15,6 +15,7 @@
   background: white;
   width: 310px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 5px;
 
 
 img {
@@ -61,76 +62,5 @@ p {
 }
 
 
-
-
-//---------show page card--------//
-.card-product {
-  overflow: hidden;
-  height: 100%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
-  text-align:center;
-  justify-content: center;
-  font-family: 'Righteous', cursive;
-  border: 0px solid white;
-  border-radius: 15px 50px;
-
-  .btn{
-    color: white;
-  }
-
-  img {
-    height: 100%;
-    width: 150px;
-    object-fit: cover;
-    margin: 20px;
-    border: 0px solid white;
-    border-radius: 5px;
-    display: block;
-    border-radius: 15px 50px;
-  }
-
-    h1 {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0;
-    text-transform: capitalize;
-  }
-
-    p {
-    font-size: 18px;
-    line-height: 1.4;
-    opacity: .7;
-    margin-bottom: 0;
-    margin-top: 8px;
-  }
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
-}
-
-.total{
-  text-align: center;
-  font-family: 'Righteous', cursive;
-  margin-top: 10px;
-}
-
-@media only screen and (max-width: 900px) {
-  .card-product{
-    flex-direction: column;
-  }
-  .btn{
-    margin: 5px 0 5px 0;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .card-product > img{
-    width: 150px;
-  }
-}
 
 
