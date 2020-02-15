@@ -9,9 +9,8 @@
       <tbody>
         <tr>
 
-          <td class="img_broder"><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
           <% if @bus.photo.attached? %>
-          <td class="img_broder"><%= cl_image_tag @bus.photo.key, height: 200, width: 300, crop: :fill %></td>
+            <td class=""><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
           <% end %>
           <td>
             <p><%= @bus.description %></p>

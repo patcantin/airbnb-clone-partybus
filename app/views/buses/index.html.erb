@@ -11,10 +11,9 @@
             <div class="card-trip-infos">
               <div>
                 <h3><%= bus.name %></h3>
-                <p><%= bus.description %></p>
                 <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-sm b-red button" %>
               </div>
-              <h2 class="card-trip-pricing"><%= bus.price %>$ /nigth</h2>
+              <h2 class="card-trip-pricing"><%= bus.price %>$</h2>
               </div>
               </div>
       <% end %>
