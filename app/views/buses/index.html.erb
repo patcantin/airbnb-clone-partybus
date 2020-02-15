@@ -8,7 +8,9 @@
               <%= bus.price %>
               <%= bus.description %>
               <%= bus.user_id %>
-              <%= cl_image_tag bus.photo.key, height: 300, width: 400, crop: :fill %>
+              <% if bus.photo.attached? %>
+                <%= cl_image_tag bus.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
               <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-primary btn-sm" %>
         </div>
     <% end %>
