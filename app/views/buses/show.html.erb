@@ -8,7 +8,9 @@
       </thead>
       <tbody>
         <tr>
+          <% if @bus.photo.attached? %>
           <td class="img_broder"><%= cl_image_tag @bus.photo.key, height: 200, width: 300, crop: :fill %></td>
+          <% end %>
           <td>
             <p><%= @bus.description %></p>
             <p>Capacity: <%= @bus.capacity %> pers.</p>
@@ -19,3 +21,4 @@
       </tbody>
     </table>
 </div>
+
