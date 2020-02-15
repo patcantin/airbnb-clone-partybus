@@ -12,14 +12,6 @@
         <td><% if @bus.photo.attached? %>
         <%= cl_image_tag @bus.photo.key, height: 200, width: 300, crop: :fill %>
            <% end %></td>
-        <td>
-          <ul>
-            <li><%= @bus.description %></li>
-            <li>Capacity: <%= @bus.capacity %> pers.</li>
-            <li><%= @bus.price %>$ / per night</li>
-          </ul>
-
-        </td>
       <td>
         <ul>
           <li><%= @bus.description %></li>
