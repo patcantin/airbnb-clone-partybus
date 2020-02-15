@@ -9,17 +9,28 @@
     </thead>
     <tbody>
       <tr>
-        <td><%= cl_image_tag @bus.photo.key, height: 200, width: 300, crop: :fill %></td>
+        <td><% if @bus.photo.attached? %>
+        <%= cl_image_tag @bus.photo.key, height: 200, width: 300, crop: :fill %>
+           <% end %></td>
         <td>
           <ul>
             <li><%= @bus.description %></li>
             <li>Capacity: <%= @bus.capacity %> pers.</li>
             <li><%= @bus.price %>$ / per night</li>
           </ul>
+
         </td>
-      </tr>
-    </tbody>
-  </table>
+      <td>
+        <ul>
+          <li><%= @bus.description %></li>
+          <li>Capacity: <%= @bus.capacity %> pers.</li>
+          <li><%= @bus.price %>$ / per night</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 
     <%= simple_form_for [@bus, @booking] do |f| %>
