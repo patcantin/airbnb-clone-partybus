@@ -11,3 +11,19 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: 'Righteous', cursive;
+}
+
+.container{
+  position: relative;
+  width: 60%;
+}
+
+.container a {
+  text-decoration: none;
+  color: black;
+}
