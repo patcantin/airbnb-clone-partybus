@@ -61,6 +61,48 @@ p {
   }
 }
 
+//-------------show page card---------------//
+
+.show_card{
+  margin-top: 100px;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  }
+
+.button_slide {
+
+  border-radius: 10%;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: #f0134d;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #ff5151;
+  -webkit-transition: ease-out 2s;
+  -moz-transition: ease-out 2s;
+  transition: ease-out 2s;
+}
+
+.slide_right:hover {
+  box-shadow: inset 400px 0 0 0 #ff5151;
+  color: black;
+}
 
 
+#outer {
+  width: 364px;
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+  img {
+    width: 150px;
+  }
+}
 

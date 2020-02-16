@@ -1,24 +1,19 @@
 <div class="container">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col"><h2 style="text-align: left;"><%= @bus.name.capitalize %></h2></th>
-          <th scope="col"><h3>Description</h3></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
 
-          <% if @bus.photo.attached? %>
-            <td class=""><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
-          <% end %>
-          <td>
-            <p><%= @bus.description %></p>
-            <p>Capacity: <%= @bus.capacity %> pers.</p>
-            <p><%= @bus.price %>$ / per night</p>
-            <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "btn btn-danger btn-sm" %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="row justify-content-md-center show_card">
+    <div class="col-md-12 col-lg-6">
+      <% if @bus.photo.attached? %>
+        <td class=""><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
+      <% end %>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <h2><%= @bus.name.upcase %></h2>
+      <p><%= @bus.description %></p>
+      <p>Capacity: <%= @bus.capacity %> pers.</p>
+      <p><%= @bus.price %>$ / per night</p>
+      <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "button_slide slide_right" %>
+    </div>
+  </div>
 </div>
+
+
