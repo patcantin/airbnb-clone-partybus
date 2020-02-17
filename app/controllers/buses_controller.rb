@@ -1,6 +1,6 @@
 class BusesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_bus, only: [:show, :destroy]
+  before_action :set_bus, only: [:show, :edit, :update, :destroy]
 
   def index
     @buses = Bus.all
@@ -21,6 +21,14 @@ class BusesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @bus.update(name: params[:bus][:name], capacity: params[:bus][:capacity], description: params[:bus][:description], price: params[:bus][:price], photo: params[:bus][:photo])
+    redirect_to dashboard_path
   end
 
   def destroy

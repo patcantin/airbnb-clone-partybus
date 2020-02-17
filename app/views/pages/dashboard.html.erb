@@ -44,6 +44,8 @@
           <p>Description: <%= bus.description %></p>
           <p>Price: <%= bus.price %> $ per/nigth</p>
           <%= link_to 'Delete this bus', bus_path(bus), method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>
+          <%= link_to 'Edit this bus', bus_path(bus)edit, class: "btn btn-primary btn-sm" %>
+
         </div>
       </div>
   </div>
