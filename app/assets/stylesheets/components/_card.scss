@@ -62,7 +62,6 @@ p {
 //-------------show page card---------------//
 
 .show_card{
-  margin-top: 100px;
   background: white;
   text-align: center;
   padding: 20px;
@@ -76,6 +75,8 @@ p {
 
   img{
     border: 1px solid black;
+    width: 200px;
+    height: 200px;
   }
 
 .button_slide {

@@ -7,12 +7,14 @@
 
   <div class="show_all">
     <% @bookings.each do |b| %>
+    <%= link_to bus_booking_path(:id, b) do %>
       <div class="card-trip">
          <% if b.bus.photo.attached? %>
             <%= cl_image_tag b.bus.photo.key, crop: :fill %>
          <% end %>
       <div class="card-trip-infos">
       <div>
+        <p><%= b.id %></p>
         <h3><%= b.bus.name %></h3>
         <p>From: <%= b.start_date.strftime("%B %d, %Y") %></p>
         <p>To: <%= b.end_date.strftime("%B %d, %Y") %></p>
@@ -21,6 +23,7 @@
       </div>
     </div>
     </div>
+    <% end %>
     <% end %>
   </div>
   <br>
@@ -40,6 +43,7 @@
           <p>Capacity: <%= bus.capacity %></p>
           <p>Description: <%= bus.description %></p>
           <p>Price: <%= bus.price %> $ per/nigth</p>
+          <%= link_to 'Delete this bus', bus_path(bus), method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>
         </div>
       </div>
   </div>
