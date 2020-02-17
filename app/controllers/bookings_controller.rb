@@ -1,9 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:destroy]
+  before_action :set_booking, only: [:show, :destroy]
 
   def new
     @booking = Booking.new
     @bus = Bus.find(params[:bus_id])
+  end
+
+  def show
   end
 
   def create
@@ -17,7 +20,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to pages_dashboard
+    redirect_to dashboard_path
   end
 
   private
