@@ -14,10 +14,12 @@
 @import "components/banner";
 @import "pages/form";
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand&display=swap');
+
 body {
   position: relative;
   min-height: 100vh;
-  // font-family: 'Righteous', cursive;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container{
@@ -36,8 +38,10 @@ table{
   border-radius: 0 0 20px 20px;
 }
 
-h2{
-  text-align: center;
+.center{
+ text-align: center;
 }
+
+
 
 
