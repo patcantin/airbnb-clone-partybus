@@ -7,6 +7,7 @@ class BusesController < ApplicationController
   end
 
   def show
+    @bookings = Booking.all
   end
 
   def new
