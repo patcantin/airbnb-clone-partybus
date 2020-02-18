@@ -19,7 +19,7 @@
       <p></p>
       <p><% diff = (@booking.end_date - @booking.start_date) %></p>
       <p><%= (diff / 1.day).round %> Days</p>
-      <%= link_to 'Cancel this trip', bus_booking_path, method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>
+      <%= link_to 'Cancel this trip', bus_booking_path, method: :delete, data: {confirm: 'You are about to cancel this booking?' }, class: "btn btn-primary btn-sm" %>
     </div>
   </div>
 </div>

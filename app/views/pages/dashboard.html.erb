@@ -30,23 +30,24 @@
   <hr>
   <br>
 
-    <h2>My buses:</h2>
-    <div class="show_all">
-    <% @buses.each do |bus| %>
-      <div class="card-trip">
-        <% if bus.photo.attached? %>
-          <%= cl_image_tag bus.photo.key, crop: :fill %>
-        <% end %>
+  <h2>My buses:</h2>
+  <div class="show_all">
+  <% @buses.each do |bus| %>
+  <%= link_to bus do %>
+    <div class="card-trip">
+      <% if bus.photo.attached? %>
+        <%= cl_image_tag bus.photo.key, crop: :fill %>
+      <% end %>
       <div class="card-trip-infos">
         <div>
           <h3><%= bus.name %></h3>
           <p>Capacity: <%= bus.capacity %></p>
           <p>Description: <%= bus.description %></p>
           <p>Price: <%= bus.price %> $ per/nigth</p>
-          <%= link_to 'Delete this bus', bus_path(bus), method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>
         </div>
       </div>
-  </div>
+    </div>
+  <% end %>
   <% end %>
   </div>
 
