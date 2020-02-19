@@ -1,0 +1,10 @@
+  <div class="container">
+    <h1 class="top_h1">Add a review for <%= @bus.name %></h1>
+    <hr>
+
+    <%= simple_form_for [@bus, @review] do |f| %>
+      <%= f.input :description %>
+      <%= f.input :note %>
+      <%= f.submit "Create", class: "btn btn-primary" %>
+    <% end %>
+  </div>

@@ -20,6 +20,7 @@
         <p>To: <%= b.end_date.strftime("%B %d, %Y") %></p>
         <p><% diff = (b.end_date - b.start_date) %></p>
         <p><%= (diff / 1.day).round %> Days</p>
+        <%= link_to 'Review this bus', new_bus_review_path(b), class: "btn btn-primary btn-sm" %>
       </div>
     </div>
     </div>
