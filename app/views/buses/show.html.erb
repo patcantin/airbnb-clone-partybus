@@ -18,12 +18,13 @@
           <% a = [] %>
           <% @bookings.each do |b| %>
             <% a.push(b.bus_id) %>
-          <% if a.include?(@bus.id) %>
-            <p><%= b.start_date.strftime("%B %d, %Y")  %> to <%= b.end_date.strftime("%B %d, %Y")  %></p>
-          <% else %>
-            <%= link_to 'Delete this bus', @bus, method: :delete, data: {confirm: 'You are about to delete this bus?' }, class: "btn btn-primary btn-sm" %>
-          <%= link_to 'Edit this bus', [:edit, @bus], class: "btn btn-primary btn-sm" %>
-          <% end %>
+            <% if a.include?(@bus.id) %>
+              <p><%= b.start_date.strftime("%B %d, %Y")  %> to <%= b.end_date.strftime("%B %d, %Y")  %></p>
+            <% else %>
+              <p>No bookings</p>
+              <%= link_to 'Delete this bus', @bus, method: :delete, data: {confirm: 'You are about to delete this bus?' }, class: "btn btn-primary btn-sm" %>
+              <%= link_to 'Edit this bus', [:edit, @bus], class: "btn btn-primary btn-sm" %>
+            <% end %>
           <% end %>
         <% else %>
           <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "button_slide slide_right" %>
@@ -32,17 +33,15 @@
         <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "button_slide slide_right" %>
       <% end %>
     </div>
-          <table>
-
-        <% @bus.review.each do |r| %>
+    <table>
+      <% @bus.review.each do |r| %>
         <tr>
           <td><%= r.description %> / </td>
           <td><%= r.note %> <i class="fas fa-star"></i></td>
           <td><%= r.user.name %></td>
         </tr>
-        <% end %>
-
-      </table>
+      <% end %>
+    </table>
   </div>
 
 </div>
