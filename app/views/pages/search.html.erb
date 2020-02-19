@@ -1,0 +1,20 @@
+<h3>Search Result</h3>
+      <div class="show_all">
+          <% @results.each do |result| %>
+          <%= link_to result do  %>
+          <div class="card-trip">
+             <% if result.photo.attached? %>
+               <%= cl_image_tag result.photo.key, crop: :fill %>
+              <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h3><%= result.name %></h3>
+                <%= link_to 'Book me!', new_bus_booking_path(result), class: "btn btn-sm b-red button" %>
+              </div>
+              <h2 class="card-trip-pricing"><%= result.price %>$</h2>
+              </div>
+              </div>
+      <% end %>
+    <% end %>
+  </div>
+
