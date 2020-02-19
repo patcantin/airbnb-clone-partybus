@@ -34,10 +34,14 @@
     </div>
     <table>
       <% @bus.reviews.each do |r| %>
-        <tr>
-          <td><%= r.description %> / </td>
-          <td><%= r.note %> <i class="fas fa-star"></i></td>
-          <td><%= r.user.name %></td>
+      <tr>
+        <td rowspan="2" class="review_td"><%= r.user.name.upcase %> 's review </td>
+        <td class="review_td"><%= r.description %></td>
+      </tr>
+      <tr>
+          <td class="review_td">
+            <%= r.note %> <i class="fas fa-star"></i>
+          </td>
         </tr>
       <% end %>
     </table>

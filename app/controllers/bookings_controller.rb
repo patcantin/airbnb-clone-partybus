@@ -14,8 +14,14 @@ class BookingsController < ApplicationController
     @bus = Bus.find(params[:bus_id])
     @booking.bus = @bus
     @booking.user = current_user
-    @booking.save!
-    redirect_to dashboard_path
+    if @booking.valid?
+      @booking.save!
+      flash[:success] = "Comment successfully created!"
+      redirect_to dashboard_path
+    else
+      flash[:warning] = "End date must be greater than Start date"
+      render :new
+    end
   end
 
   def destroy
