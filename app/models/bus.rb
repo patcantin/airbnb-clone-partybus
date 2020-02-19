@@ -2,7 +2,7 @@ class Bus < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
 
-  has_many :options, through: :bus_options
+  has_many :option, through: :bus_option
 
   validates :description, presence: true
   validates :price, presence: true
