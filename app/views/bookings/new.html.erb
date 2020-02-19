@@ -1,33 +1,30 @@
   <div class="container">
-    <h1 class="top_h1">Book this bus</h1>
-    <table class="table">
-    <thead>
-      <tr>
-        <th scope="col"><h2 style="text-align: left;"><%= @bus.name.capitalize %></h2></th>
-        <th scope="col"><h3>Description</h3></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><% if @bus.photo.attached? %>
-        <%= cl_image_tag @bus.photo.key, height: 200, width: 300, crop: :fill %>
-           <% end %></td>
-      <td>
-        <ul>
-          <li><%= @bus.description %></li>
-          <li>Capacity: <%= @bus.capacity %> pers.</li>
-          <li><%= @bus.price %>$ / per night</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 
+ <div class="row justify-content-md-center show_card">
+    <div class="col-md-12 col-lg-6">
+      <% if @bus.photo.attached? %>
+        <td class="img_card"><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
+      <% end %>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <h1 class="top_h1">Book this bus</h1>
+      <h2><%= @bus.name.upcase %></h2>
+      <p><%= @bus.description %></p>
+      <p>Capacity: <%= @bus.capacity %> pers.</p>
+      <p><%= @bus.price %>$ / per night</p>
 
-    <%= simple_form_for [@bus, @booking] do |f| %>
+      <%= simple_form_for [@bus, @booking] do |f| %>
       <%= f.input :start_date, as: :date, html5: true %>
       <%= f.input :end_date, as: :date, html5: true %>
       <%= f.submit "Confirm" %>
     <% end %>
+
+    </div>
+
+  </div>
+
+
+
+
 </div>

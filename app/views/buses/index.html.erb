@@ -1,6 +1,7 @@
 <!-- Carroussel Banner -->
 <%= render'shared/banner' %>
-<div class="container">
+<div class="container container_index">
+  <p class="center"><%= @buses.count %> buses listed</p>
   <%= form_tag(search_page_path, :method => "get",
     class: 'navbar-form navbar-left') do %>
   <div class="input-group">
@@ -19,8 +20,8 @@
               <% end %>
             <div class="card-trip-infos">
               <div>
-                <h3><%= bus.name %></h3>
-                <%= link_to 'Book me!', new_bus_booking_path(bus), class: "btn btn-sm b-red button" %>
+                <h2><%= bus.name %></h2>
+                <%= link_to 'Book me!', new_bus_booking_path(bus), class: "button_slide slide_right" %>
               </div>
               <h2 class="card-trip-pricing"><%= bus.price %>$</h2>
               </div>
@@ -28,9 +29,5 @@
       <% end %>
     <% end %>
   </div>
-
-
-
-    <p class="total"><%= @buses.count %> buses listed</p>
 
 </div>
