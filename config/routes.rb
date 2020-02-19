@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :bookings, only: %i(show new create destroy)
   end
   get '/pages/dashboard', to: 'pages#dashboard', as: 'dashboard'
+  get '/search' => 'pages#search', :as => 'search_page'
 end
 
 

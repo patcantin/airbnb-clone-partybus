@@ -21,6 +21,7 @@ Bus.destroy_all
 Bus.create!(name: "Wagonners'bus", capacity: 15, description: "For an unrivaled quality of service, Wagonners'bus, with a capacity of 15 people, has a seating configuration and a comfort worthy of a prestigious bus. The state-of-the-art level of finish will undoubtedly leave you indifferent ... So now you just have to come and discover this new concept by organizing your next event in the Wagonners'bus.", price: 250, user_id: user.id)
 
 
+
 # Creating ingredients by parsing API
 # require 'json'
 # require 'open-uri'
