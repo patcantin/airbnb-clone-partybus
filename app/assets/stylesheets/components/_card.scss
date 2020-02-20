@@ -4,11 +4,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 30px;
-  font-family: 'Righteous', cursive;
 }
 
 .card-trip {
+  color: black;
   overflow: hidden;
   background: white;
   width: 310px;
@@ -20,13 +19,16 @@ img {
   margin: 5px;
   height: 200px;
   width: 300px;
-  object-fit: cover;
+  border-radius: 8px;
 }
 
+
 h2 {
+  color: black;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  font-family: 'Montserrat Subrayada', sans-serif;
 }
 
 p {
@@ -50,67 +52,62 @@ p {
   top: -20px;
   width: 40px;
 }
-  h3 {
-
+ .card-trip-pricing {
+    font-family: 'Poppins', sans-serif;
   }
+
   &:hover {
     box-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
     opacity: 1;
   }
+
+  @media only screen and (max-width: 600px) {
+  img {
+    width: 150px;
+    height: 150px;
+  }
+}
 }
 
 //-------------show page card---------------//
 
 .show_card{
+  margin-top: 10%;
   background: white;
   text-align: center;
   padding: 20px;
-  border: 1px solid black;
   border-radius: 10px;
 
   h2{
-    background-color: rgba(0, 0, 0, 1);
+    background-image: linear-gradient(to right, white, #f0134d, #ff5151, #f0134d, white);
     color: white;
+    font-family: 'Montserrat Subrayada', sans-serif;
   }
 
   img{
-    border: 1px solid black;
-    width: 200px;
-    height: 200px;
+    margin: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 8px;
   }
 
-.button_slide {
-  color: white;
-  border-radius: 10%;
-  padding: 10px 20px;
-  display: inline-block;
-  font-size: 14px;
-  letter-spacing: 1px;
-  background: #f0134d;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 0 #ff5151;
-  -webkit-transition: ease-out 2s;
-  -moz-transition: ease-out 2s;
-  transition: ease-out 2s;
-}
-
-.slide_right:hover {
-  box-shadow: inset 400px 0 0 0 #ff5151;
-  color: black;
-}
-
-
-#outer {
-  width: 364px;
-  margin: 50px auto 0 auto;
-  text-align: center;
-}
-}
+  .overall{
+    color: white;
+    background-color: black;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 5px 10px;
+  }
 
 
 @media only screen and (max-width: 600px) {
   img {
     width: 150px;
+    height: 150px;
   }
+}
+
 }
 
