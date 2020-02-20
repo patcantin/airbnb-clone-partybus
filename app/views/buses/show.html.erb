@@ -3,7 +3,7 @@
   <div class="row justify-content-md-center show_card">
     <div class="col-md-12 col-lg-6">
       <% if @bus.photo.attached? %>
-        <td class=""><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
+        <td class="img_card"><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
       <% end %>
     </div>
     <div class="col-md-12 col-lg-6">
@@ -13,36 +13,56 @@
       <p><%= @bus.price %>$ / per night</p>
       <% if user_signed_in? %>
         <% if current_user.id == @bus.user_id %>
-          <%= link_to 'Edit this bus', [:edit, @bus], class: "btn btn-primary btn-sm" %>
-          <p style="margin-top: 20px;">Bookings on this bus:</p>
+          <%= link_to 'Edit this bus', [:edit, @bus], class: "button_slide slide_right" %>
           <% a = [] %>
-          <% @bookings.each do |b| %>
-            <% a.push(b.bus_id) %>
-          <% if a.include?(@bus.id) %>
-            <p><%= b.start_date.strftime("%B %d, %Y")  %> to <%= b.end_date.strftime("%B %d, %Y")  %></p>
-          <% else %>
-            <%= link_to 'Delete this bus', @bus, method: :delete, data: {confirm: 'You are about to delete this bus?' }, class: "btn btn-primary btn-sm" %>
-          <%= link_to 'Edit this bus', [:edit, @bus], class: "btn btn-primary btn-sm" %>
-          <% end %>
-          <% end %>
+            <% @bookings.each do |b| %>
+              <% a.push(b.bus_id) %>
+            <% end %>
+            <% if a.exclude?(@bus.id) %>
+              <%= link_to 'Delete this bus', @bus, method: :delete, data: {confirm: 'You are about to delete this bus?' }, class: "button_slide slide_right" %>
+              <p>No bookings</p>
+            <% else %>
+            <br>
+            <p>Booked dates:</p>
+              <% @bookings.each do |b| %>
+                <p><%= b.user.name.upcase %> : From <%= b.start_date.strftime("%B %d, %Y")  %> to <%= b.end_date.strftime("%B %d, %Y")  %></p>
+                <hr>
+              <% end %>
+            <% end %>
         <% else %>
           <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "button_slide slide_right" %>
         <% end %>
-      <% else %>
-        <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "button_slide slide_right" %>
+        <% else %>
+          <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "button_slide slide_right" %>
+      <% end %>
+      <% if @bus.reviews.empty? == false %>
+        <table align="center">
+          <% overall = 0 %>
+          <% rev_tot = 0 %>
+          <% @bus.reviews.each do |r| %>
+            <% overall += r.note %>
+            <% rev_tot += 1 %>
+              <tr>
+                <td rowspan="2"><p class="overall"><%= r.user.name.upcase %> 's review </p></td>
+                <td><%= r.description %></td>
+              </tr>
+               <tr>
+                <td>
+                <% r.note.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+                <span>/5</span>
+                </td>
+              </tr>
+          <% end %>
+        </table>
+        <h3 class="overall">Overall review <%= overall.to_f / rev_tot %></h3>
       <% end %>
     </div>
-          <table>
 
-        <% @bus.review.each do |r| %>
-        <tr>
-          <td><%= r.description %> / </td>
-          <td><%= r.note %> <i class="fas fa-star"></i></td>
-          <td><%= r.user.name %></td>
-        </tr>
-        <% end %>
 
-      </table>
+
+
   </div>
 
 </div>

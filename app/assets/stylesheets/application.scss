@@ -1,3 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+/*
+*= require simple_calendar
+*/
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -14,22 +20,26 @@
 @import "components/banner";
 @import "pages/form";
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand&display=swap');
 
 body {
   position: relative;
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container{
+  color: black;
   position: relative;
   width: 60%;
 }
 
+.container_index{
+  padding-bottom: 100px;
+}
+
 .container a {
   text-decoration: none;
-  color: black;
+  font-weight: 900;
 }
 
 table{
@@ -40,7 +50,18 @@ table{
 
 .center{
  text-align: center;
+ margin: 5px;
 }
+
+h1{
+  text-align: center;
+  margin: 10px;
+}
+
+li {
+    list-style-type: none;
+}
+
 
 
 
