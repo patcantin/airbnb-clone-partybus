@@ -1,16 +1,17 @@
 <!-- Carroussel Banner -->
 <%= render'shared/banner' %>
+<br>
 <div class="container container_index">
-  <p class="center"><%= @buses.count %> buses listed</p>
   <%= form_tag(search_page_path, :method => "get",
             class: 'navbar-form navbar-left') do %>
           <div class="input-group">
-            <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+            <%= search_field_tag :search, params[:search], placeholder: "Search your dream bus...", class: "form-control" %>
             <div class="input-group-btn">
-              <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+              <%= button_tag "", :class => 'btn btn-info fas fa-shuttle-van nav-btn',:name => nil%>
             </div>
           </div>
         <% end %>
+        <br>
   <div class="show_all">
     <% @buses.each do |bus| %>
       <%= link_to bus do  %>
