@@ -10,6 +10,9 @@
       <h2><%= @bus.name.upcase %></h2>
       <p><%= @bus.description %></p>
       <p>Capacity: <%= @bus.capacity %> pers.</p>
+      <% @bus.options.each do |o| %>
+        #<%= o.name %>
+      <% end %>
       <p><%= @bus.price %>$ / per night</p>
       <% if user_signed_in? %>
         <% if current_user.id == @bus.user_id %>

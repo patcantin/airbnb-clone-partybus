@@ -18,6 +18,10 @@ class BusesController < ApplicationController
     @bus = Bus.new(bus_params)
     @bus.user = current_user
     if @bus.save!
+      # we look for options added for bus created bus; we link all options to create the bus and delete first empty string.
+      params[:bus][:option_ids][1..-1].each do |id|
+        BusOption.create(bus_id: @bus.id, option_id: id)
+      end
       redirect_to dashboard_path
     else
       render :new
