@@ -16,13 +16,15 @@
       <p><%= @bus.price %>$ / per night</p>
       <% if user_signed_in? %>
         <% if current_user.id == @bus.user_id %>
-          <%= link_to 'Edit this bus', [:edit, @bus], class: "button_slide slide_right" %>
+        <div>
+          <%= link_to 'Edit', [:edit, @bus], class: "button_slide slide_right" %>
           <% a = [] %>
             <% @bookings.each do |b| %>
               <% a.push(b.bus_id) %>
             <% end %>
             <% if a.exclude?(@bus.id) %>
-              <%= link_to 'Delete this bus', @bus, method: :delete, data: {confirm: 'You are about to delete this bus?' }, class: "button_slide slide_right" %>
+              <%= link_to 'Delete', @bus, method: :delete, data: {confirm: 'You are about to delete this bus?' }, class: "button_slide slide_right" %>
+        </div>
               <p>No bookings</p>
             <% else %>
             <br>
