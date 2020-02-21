@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
       flash[:success] = "Comment successfully created!"
       redirect_to dashboard_path
     else
+      @bookings = Booking.all
       flash[:warning] = "End date must be greater than Start date"
       render :new
     end
