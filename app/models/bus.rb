@@ -10,4 +10,14 @@ class Bus < ApplicationRecord
   validates :price, presence: true
   validates :capacity, presence: true, inclusion: 1..56
   validates :name, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [:name, :description, :capacity, :price],
+    associated_against: {
+      options: [:name]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end
