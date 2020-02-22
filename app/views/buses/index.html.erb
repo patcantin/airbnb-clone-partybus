@@ -22,10 +22,12 @@
             <div class="card-trip-infos">
               <div>
                 <h2><%= bus.name %></h2>
-                <%= link_to 'Book me!', new_bus_booking_path(bus), class: "button_slide slide_right" %>
+                <p class="card-trip-pricing"><%= bus.price %>$/hr</p>
+
               </div>
-              <h2 class="card-trip-pricing"><%= bus.price %>$</h2>
+
               </div>
+               <%= link_to 'Book me!', new_bus_booking_path(bus), class: "button_slide slide_right index_butt" %>
               </div>
       <% end %>
     <% end %>

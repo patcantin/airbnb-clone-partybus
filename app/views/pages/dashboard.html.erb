@@ -1,6 +1,6 @@
 <div class="container">
   <br>
-  <h2 style="text-align: center;text-decoration: underline;">Dashboard <%= current_user.name.upcase %></h2>
+  <h2 style="text-align: center;text-decoration: underline;"><%= current_user.name.upcase %>'s dashboard</h2>
   <br>
   <h2>My reservations: </h2>
 
@@ -14,13 +14,13 @@
          <% end %>
       <div class="card-trip-infos">
       <div>
-        <h3><%= b.bus.name %></h3>
+        <h2><%= b.bus.name %></h2>
         <p>From: <%= b.start_date.strftime("%B %d, %Y") %></p>
         <p>To: <%= b.end_date.strftime("%B %d, %Y") %></p>
         <p><% diff = (b.end_date - b.start_date) %></p>
         <p><%= (diff / 1.day).round %> Days</p>
       </div>
-      <%= link_to 'Review this bus', new_bus_review_path(b), class: "button_slide slide_right" %>
+      <%= link_to 'Review', new_bus_review_path(b), class: "button_slide slide_right" %>
     </div>
     </div>
     <% end %>
@@ -40,7 +40,7 @@
       <% end %>
       <div class="card-trip-infos">
         <div>
-          <h3><%= bus.name %></h3>
+          <h2><%= bus.name %></h2>
           <p>Capacity: <%= bus.capacity %></p>
           <p>Description: <%= bus.description %></p>
           <p>Price: <%= bus.price %> $ per/nigth</p>
