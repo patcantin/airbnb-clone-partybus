@@ -52,18 +52,21 @@
               <tr>
                 <td rowspan="2"><p class="overall"><%= r.user.name.upcase %> 's review </p></td>
                 <td><%= r.description %></td>
-              </tr>
-               <tr>
-                <td>
+                 <td>
                 <% r.note.times do %>
                   <i class="fas fa-star"></i>
                 <% end %>
-                <span>/5</span>
                 </td>
               </tr>
           <% end %>
         </table>
-        <h3 class="overall">Overall review <%= overall.to_f / rev_tot %></h3>
+        <div class="overall">
+             <% avg = overall / rev_tot %>
+        <% avg.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        </div>
+
       <% end %>
     </div>
 
