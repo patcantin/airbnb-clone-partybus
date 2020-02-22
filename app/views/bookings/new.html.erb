@@ -8,7 +8,6 @@
       <% end %>
     </div>
     <div class="col-md-12 col-lg-6">
-      <h1 class="top_h1">Book this bus</h1>
       <h2><%= @bus.name.upcase %></h2>
       <p><%= @bus.description %></p>
       <p>Capacity: <%= @bus.capacity %> pers.</p>
@@ -28,7 +27,7 @@
   <%= date %>
   <% bookings.each do |booking| %>
   <div>
-    <p>Booked</p>
+    <i class="fas fa-skull"></i>
   </div>
   <% end %>
 <% end %>

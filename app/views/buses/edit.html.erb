@@ -1,32 +1,26 @@
  <div class="container">
 
  <div class="row justify-content-md-center show_card">
-    <div class="col-md-12 col-lg-6">
+    <div class="col-md-6 col-lg-12">
       <% if @bus.photo.attached? %>
         <td class="img_card"><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
       <% end %>
     </div>
-    <div class="col-md-12 col-lg-6">
-      <h1 class="top_h1">Edit your bus "<%= @bus.name %>"</h1>
-      <h2><%= @bus.name.upcase %></h2>
-      <p><%= @bus.description %></p>
-      <p>Capacity: <%= @bus.capacity %> pers.</p>
-      <p><%= @bus.price %>$ / per night</p>
+      <div class="col-md-6 col-lg-12">
+        <h2><%= @bus.name.upcase %></h2>
+        <p><%= @bus.description %></p>
+        <p>Capacity: <%= @bus.capacity %> pers.</p>
+        <p><%= @bus.price %>$ / per night</p>
 
-    <%= simple_form_for @bus do |f| %>
-      <%= f.input :name %>
-      <%= f.input :capacity %>
-      <%= f.input :description %>
-      <%= f.input :price %>
-      <%= f.input :photo, as: :file %>
-      <%= f.association :options, as: :check_boxes %>
-      <%= f.submit "Create", class: "btn btn-primary" %>
-    <% end %>
-
-
+      <%= simple_form_for @bus do |f| %>
+        <%= f.input :name %>
+        <%= f.input :capacity %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.association :options, as: :check_boxes %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "Create", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
-
-
-
-
 </div>

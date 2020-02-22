@@ -1,7 +1,10 @@
 .simple-calendar {
-
+    margin: 20px 0;
   .calendar-heading{
     text-align: center;
+  }
+  .calendar-heading a{
+    color: red;
   }
   .table{
     margin: 0;

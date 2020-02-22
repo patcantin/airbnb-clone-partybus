@@ -2,14 +2,14 @@
   <br>
 
   <div class="row justify-content-md-center show_card">
-    <div class="">
+    <div class="col-md-12 col-lg-6">
       <% if @booking.bus.photo.attached? %>
-        <td class="col-md-12 col-lg-6"><%= cl_image_tag @booking.bus.photo.key, crop: :fill %></td>
+        <td><%= cl_image_tag @booking.bus.photo.key, crop: :fill %></td>
       <% end %>
     </div>
     <div class="col-md-12 col-lg-6">
 
-    <h2>Your dates for <%= @booking.bus.name %></h2>
+    <h2><%= @booking.bus.name %></h2>
     <p>From: <%= @booking.start_date.strftime("%B %d, %Y") %></p>
     <p>To: <%= @booking.end_date.strftime("%B %d, %Y") %></p>
       <hr>

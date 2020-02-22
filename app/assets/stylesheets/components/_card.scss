@@ -11,15 +11,13 @@
   overflow: hidden;
   background: white;
   width: 310px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 5px;
-
 
 img {
   margin: 5px;
-  height: 200px;
+  height: 300px;
   width: 300px;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 
@@ -32,6 +30,7 @@ h2 {
 }
 
 p {
+  color: black;
   font-size: 12px;
   opacity: .7;
   margin: 0;
@@ -39,11 +38,15 @@ p {
 
 
 .card-trip-infos {
-  padding: 16px;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.card-trip-infos a {
+  float: left;
 }
 
 .card-trip-infos .card-trip-user {
@@ -52,12 +55,12 @@ p {
   top: -20px;
   width: 40px;
 }
- .card-trip-pricing {
-    font-family: 'Open Sans';
-  }
+.index_butt{
+  float: right;
+}
 
   &:hover {
-    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.1);
     opacity: 1;
   }
 
@@ -76,9 +79,9 @@ p {
   background: white;
   text-align: center;
   padding: 20px;
-  border-radius: 10px;
 
   h2{
+    color: black;
     background-image: linear-gradient(to right, white, #f0134d, #ff5151, #f0134d, white);
     color: white;
     font-family: 'Open Sans';
@@ -86,10 +89,9 @@ p {
 
   img{
     margin: 5px;
-    width: 100%;
     height: 100%;
     padding: 5px;
-    border-radius: 8px;
+    border-radius: 4px;
   }
 
   .overall{
