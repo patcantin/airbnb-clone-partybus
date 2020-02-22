@@ -12,24 +12,21 @@
   background: white;
   width: 310px;
   margin: 5px;
-  border-radius: 3px;
 
 img {
   margin: 5px;
   height: 300px;
   width: 300px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 
 h2 {
-  color: #333132;
-  text-transform: uppercase;
+  color: black;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
   margin: 0;
-  font-family: 'Roboto Condensed';
-  letter-spacing: 3px;
+  font-family: 'Open Sans';
 }
 
 p {
@@ -44,10 +41,8 @@ p {
   padding: 5px;
   display: flex;
   justify-content: space-between;
-  // align-items: flex-end;
-  // position: relative;
-  flex-wrap: wrap;
-  align-content: center;
+  align-items: flex-end;
+  position: relative;
 }
 
 .card-trip-infos a {
@@ -60,11 +55,9 @@ p {
   top: -20px;
   width: 40px;
 }
-
 .index_butt{
   float: right;
 }
-
 
   &:hover {
     box-shadow:5px 5px 5px rgba(0, 0, 0, 0.1);
