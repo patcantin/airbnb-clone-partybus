@@ -44,6 +44,8 @@
           <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "button_slide slide_right" %>
            <%= link_to 'Review', new_bus_review_path(@bus), class: "button_slide slide_right" %>
       <% end %>
+      <hr>
+      <p  class="overall">REVIEWS</p>
       <% if @bus.reviews.empty? == false %>
         <table align="center">
           <% overall = 0 %>
@@ -52,7 +54,7 @@
             <% overall += r.note %>
             <% rev_tot += 1 %>
               <tr>
-                <td><p class="overall"><%= r.user.name.upcase %> 's review </p></td>
+                <td><%= r.user.name.upcase %> 's review </td>
                 <td><%= r.description %></td>
                  <td>
                 <% r.note.times do %>
@@ -62,7 +64,8 @@
               </tr>
           <% end %>
         </table>
-        <div class="overall">
+        <br>
+        <div>
              <% avg = overall / rev_tot %>
         <% avg.times do %>
           <i class="fas fa-star"></i>
