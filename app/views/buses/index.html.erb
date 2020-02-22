@@ -12,29 +12,23 @@
           </div>
         <% end %>
         <br>
-
-  <!-- All buses available -->
-<div class="show_all">
-  <% @buses.each do |bus| %>
-    <%= link_to bus do  %>
-
-  <!-- Bus card -->
-  <div class="card-trip">
-    <% if bus.photo.attached? %>
-      <%= cl_image_tag bus.photo.key, crop: :fill %>
-    <% end %>
-
-    <!-- Bus card info-->
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= bus.name %></h2>
-        <%= link_to 'Book me!', new_bus_booking_path(bus), class: "button_slide slide_right" %>
-      </div>
-      <div>
-        <h2 class="card-trip-pricing"><%= bus.price %>$</h2>
-      </div>
-    </div>
+  <div class="show_all">
+    <% @buses.each do |bus| %>
+      <%= link_to bus do  %>
+          <div class="card-trip">
+             <% if bus.photo.attached? %>
+               <%= cl_image_tag bus.photo.key, crop: :fill %>
+              <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= bus.name %></h2>
+                <%= link_to 'Book me!', new_bus_booking_path(bus), class: "button_slide slide_right" %>
+              </div>
+              <h2 class="card-trip-pricing"><%= bus.price %>$</h2>
+              </div>
+              </div>
       <% end %>
     <% end %>
   </div>
+
 </div>

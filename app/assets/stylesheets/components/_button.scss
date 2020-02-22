@@ -9,16 +9,18 @@
   display: inline-block;
   font-size: 14px;
   letter-spacing: 3px;
-  background-color: #ffd200;
-  cursor: pointer;
-  box-shadow: inset 300px 0 0 0  #e60000;
-  -webkit-transition: ease-out 1s;
-  -moz-transition: ease-out 1s;
-  transition: ease-out 1s;
+  background-image: linear-gradient(to right, #FF512F 0%, #F09819 100%, #FF512F 100%)
+  // background-color: #ffd200;
+  // cursor: pointer;
+  // box-shadow: inset 300px 0 0 0  #e60000;
+  // -webkit-transition: ease-out 1s;
+  // -moz-transition: ease-out 1s;
+  // transition: ease-out 1s;
 }
 
 .slide_right:hover {
-  box-shadow: inset 400px 0 0 0  #ffd200;
+  // background-position: right center;
+  box-shadow: inset 400px 0 0 0  #FF512F;
   color: white;
 }
 
