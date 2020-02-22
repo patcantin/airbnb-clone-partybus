@@ -5,21 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "cleaning database"
+# puts "cleaning database"
 
 
-puts "creating user"
+# puts "creating user"
 
-User.destroy_all
+# User.destroy_all
 
-user = User.create!(name: "user", email: "user@gmail.com", password: "123456", reset_password_token: nil, reset_password_sent_at: nil)
+# user = User.create!(name: "user", email: "user@gmail.com", password: "123456", reset_password_token: nil, reset_password_sent_at: nil)
 
-puts "creating bus"
+# puts "creating bus"
 
 
-Bus.destroy_all
+# Bus.destroy_all
 
-Bus.create!(name: "Wagonners'bus", capacity: 15, description: "For an unrivaled quality of service, Wagonners'bus, with a capacity of 15 people, has a seating configuration and a comfort worthy of a prestigious bus. The state-of-the-art level of finish will undoubtedly leave you indifferent ... So now you just have to come and discover this new concept by organizing your next event in the Wagonners'bus.", price: 250, user_id: user.id)
+# Bus.create!(name: "Wagonners'bus", capacity: 15, description: "For an unrivaled quality of service, Wagonners'bus, with a capacity of 15 people, has a seating configuration and a comfort worthy of a prestigious bus. The state-of-the-art level of finish will undoubtedly leave you indifferent ... So now you just have to come and discover this new concept by organizing your next event in the Wagonners'bus.", price: 250, user_id: user.id)
 
 puts "creating options"
 
