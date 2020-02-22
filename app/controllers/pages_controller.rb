@@ -9,7 +9,7 @@ class PagesController < ApplicationController
       redirect_to(root_path, alert: "Empty field!") && return
     else
       @parameter = params[:search].downcase
-      @results = Bus.all.where("lower(name) LIKE :search", search: "%#{@parameter}%")
+      @results = Bus.global_search(@parameter)
     end
   end
 end
