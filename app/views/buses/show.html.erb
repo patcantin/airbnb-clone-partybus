@@ -38,9 +38,11 @@
             <% end %>
         <% else %>
           <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "button_slide slide_right" %>
+            <%= link_to 'Review', new_bus_review_path(@bus), class: "button_slide slide_right" %>
         <% end %>
         <% else %>
           <%= link_to 'Book me!', new_bus_booking_path(@bus), class: "button_slide slide_right" %>
+           <%= link_to 'Review', new_bus_review_path(@bus), class: "button_slide slide_right" %>
       <% end %>
       <% if @bus.reviews.empty? == false %>
         <table align="center">
@@ -50,7 +52,7 @@
             <% overall += r.note %>
             <% rev_tot += 1 %>
               <tr>
-                <td rowspan="2"><p class="overall"><%= r.user.name.upcase %> 's review </p></td>
+                <td><p class="overall"><%= r.user.name.upcase %> 's review </p></td>
                 <td><%= r.description %></td>
                  <td>
                 <% r.note.times do %>
