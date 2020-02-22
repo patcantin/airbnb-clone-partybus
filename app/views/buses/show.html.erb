@@ -9,14 +9,14 @@
     <div class="col-md-12 col-lg-6">
       <h2><%= @bus.name.upcase %></h2>
       <p><%= @bus.description %></p>
-      <p>Capacity: <%= @bus.capacity %> pers.</p>
+      <p class="light-grey">Capacity: <%= @bus.capacity %> pers.</p>
       <% @bus.options.each do |o| %>
         #<%= o.name %>
       <% end %>
-      <p><%= @bus.price %>$ / per night</p>
+      <p class="light-grey"><%= @bus.price %>$ / per night</p>
       <% if user_signed_in? %>
         <% if current_user.id == @bus.user_id %>
-        <div>
+        <div id="bus-show-page-button-container">
           <%= link_to 'Edit', [:edit, @bus], class: "button_slide slide_right" %>
           <% a = [] %>
             <% @bookings.each do |b| %>

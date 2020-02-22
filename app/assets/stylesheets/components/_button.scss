@@ -37,3 +37,11 @@
   padding: 12px 6px;
   border-radius: 2px;
 }
+
+#bus-show-page-button-container {
+  margin: auto;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
