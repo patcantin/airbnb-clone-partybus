@@ -13,7 +13,9 @@
       <% @bus.options.each do |o| %>
         #<%= o.name %>
       <% end %>
-      <p class="light-grey"><%= @bus.price %>$ / per night</p>
+
+      <p><%= @bus.price %>$ / hour</p>
+
       <% if user_signed_in? %>
         <% if current_user.id == @bus.user_id %>
         <div id="bus-show-page-button-container">
