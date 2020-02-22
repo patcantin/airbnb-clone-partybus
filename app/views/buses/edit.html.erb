@@ -1,9 +1,9 @@
  <div class="container">
 
  <div class="row justify-content-md-center show_card">
-    <div class="col-md-6 col-lg-12">
+    <div class="col-md-4">
       <% if @bus.photo.attached? %>
-        <td class="img_card"><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
+        <td class="img_edit"><%= cl_image_tag @bus.photo.key, crop: :fill %></td>
       <% end %>
     </div>
       <div class="col-md-6 col-lg-12">
