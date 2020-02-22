@@ -1,5 +1,5 @@
   <div class="container">
-    <h1 class="top_h1">Add a new bus</h1>
+    <h1 style="text-align: center;font-family: Roboto Condensed; letter-spacing: 3px; text-transform: uppercase;">Add a new bus</h1>
     <hr>
 
     <%= simple_form_for @bus do |f| %>
@@ -9,6 +9,6 @@
       <%= f.input :price %>
        <%= f.association :options, as: :check_boxes %>
       <%= f.input :photo, as: :file %>
-      <%= f.submit "Create", class: "btn btn-primary" %>
+      <%= f.submit "Create", class: "button_slide slide_right" %>
     <% end %>
   </div>
