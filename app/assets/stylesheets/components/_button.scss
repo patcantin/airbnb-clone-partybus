@@ -1,12 +1,14 @@
 .button_slide {
+  text-transform: uppercase;
+  text-align: center;
   color: white;
   border-radius: 4%;
   padding: 10px 20px;
   margin: 15px;
-  width: 100px;
+  width: 90%;
   display: inline-block;
   font-size: 14px;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
   background-color: #ffd200;
   cursor: pointer;
   box-shadow: inset 300px 0 0 0  #e60000;
